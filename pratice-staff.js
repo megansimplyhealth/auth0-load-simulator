@@ -1,10 +1,11 @@
 const axios = require('axios');
+require("dotenv").config();
 
 // Replace with your Auth0 config
-const AUTH0_DOMAIN = '';
-const CLIENT_ID = '';
-const CLIENT_SECRET = '';
-const AUDIENCE = ''; // Optional
+const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
+const CLIENT_ID = process.env.AUTH0_CLIENT_ID;
+const CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
+const AUDIENCE = process.env.AUTH0_AUDIENCE;
 const SCOPE = 'openid profile email';   // Optional
 
 // List of test users

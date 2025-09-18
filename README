@@ -1,0 +1,30 @@
+# Auth0 Load Simulator (Morpheus Migration Test)
+
+This project is a simple load simulator designed to test logging in through Auth0 during the Morpheus migration process.  
+It uses your Auth0 credentials to perform automated login requests to verify that the migration is working as expected.
+
+---
+
+## ⚙️ Setup
+
+1. **Open the `.env` file** 
+2. **Update the following values** with your **Morpheus Auth0 tenant credentials**:
+
+```env
+AUTH0_DOMAIN=your-morpheus-tenant.us.auth0.com
+AUTH0_CLIENT_ID=your-client-id
+AUTH0_CLIENT_SECRET=your-client-secret
+AUTH0_AUDIENCE=https://your-api/ 
+```
+
+## 👟 Running
+1. **Open 2 new terminals** 
+2. **In terminal 1 paste command**:
+```bash
+node pratice-staff.js
+```
+3. **In terminal 2 paste command**:
+```bash
+node dentists.js
+```
+4. **When ready press enter and run both terminals (there's 30 second timer before each script runs)**
