@@ -66,6 +66,10 @@ async function loginUser(username, password) {
 
 // Run login attempts for all test users
 (async () => {
+  console.log("Running login attempts for dentists test users...");
+  // 30 second timer before tests run
+  await new Promise(resolve => setTimeout(resolve, 30000));
+  console.log("30 second timer complete. Tests start now");
   for (const user of testUsers) {
     await loginUser(user.username, user.password);
   }
