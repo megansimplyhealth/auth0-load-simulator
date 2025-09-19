@@ -1,0 +1,54 @@
+{
+  // .vscode/tasks.json
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run test-practice-staff test",
+      "type": "shell",
+      "command": "node test-pratice-staff.js",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run test-dentists test",
+      "type": "shell",
+      "command": "node test-dentists.js",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Test Auth0 Login Load Test",
+      "type": "shell",
+      "dependsOn": ["Run test-practice-staff test", "Run test-dentists test"],
+      "presentation": {
+            "reveal": "always",
+            "panel": "new",
+            "close": true,
+            "group": "app"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run preprod-practice-staff test",
+      "type": "shell",
+      "command": "node preprod-pratice-staff.js",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run preprod-dentists test",
+      "type": "shell",
+      "command": "node preprod-dentists.js",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Pre-Prod Auth0 Login Load Test",
+      "type": "shell",
+      "dependsOn": ["Run preprod-practice-staff test", "Run preprod-dentists test"],
+      "presentation": {
+            "reveal": "always",
+            "panel": "new",
+            "close": true,
+            "group": "app"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

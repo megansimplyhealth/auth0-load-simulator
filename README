@@ -17,14 +17,20 @@ AUTH0_CLIENT_SECRET=your-client-secret
 AUTH0_AUDIENCE=https://your-api/ 
 ```
 
-## 👟 Running
+## 🚀 Running via Tasks
+1. **Open the command palette (Ctrl + Shift + P / Cmd + Shift + P) and select 'Tasks:Run Task'**
+2. **To run Test the select 'Run Test Auth0 Login Load Test'**
+3. **To run Test the select 'Run Pre-Prod Auth0 Login Load Test'**
+
+
+## 👟 Manual Running
 1. **Open 2 new terminals** 
 2. **In terminal 1 paste command**:
 ```bash
-node pratice-staff.js
+node {env}-pratice-staff.js
 ```
 3. **In terminal 2 paste command**:
 ```bash
-node dentists.js
+node {env}-dentists.js
 ```
 4. **When ready press enter and run both terminals (there's 30 second timer before each script runs)**
