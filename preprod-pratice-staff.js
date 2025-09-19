@@ -1,25 +1,27 @@
 const axios = require('axios');
+require("dotenv").config();
 
-const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
-const CLIENT_ID = process.env.AUTH0_CLIENT_ID;
-const CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
-const AUDIENCE = process.env.AUTH0_AUDIENCE;
-const SCOPE = 'openid profile email'; 
+// Replace with your Auth0 config
+const AUTH0_DOMAIN = process.env.PREPROD_AUTH0_DOMAIN;
+const CLIENT_ID = process.env.PREPROD_AUTH0_CLIENT_ID;
+const CLIENT_SECRET = process.env.PREPROD_AUTH0_CLIENT_SECRET;
+const AUDIENCE = process.env.PREPROD_AUTH0_AUDIENCE;
+const SCOPE = 'openid profile email';
 
 // List of test users
 const testUsers = [
-  { username: '259144', password: 'Testing12345!' },
-  { username: '257822', password: 'Testing12345!' },
-  { username: '251802', password: 'Testing12345!' },
-  { username: '258981', password: 'Testing12345!' },
-  { username: '252918', password: 'Testing12345!' },
-  { username: '254858', password: 'Testing12345!' },
-  { username: '253118', password: 'Testing12345!' },
-  { username: '230053', password: 'Testing12345!' },
-  { username: '259786', password: 'Testing12345!' },
-  { username: '220958', password: 'Testing12345!' },
-  { username: '260497', password: 'Testing12345!' },
-  { username: '255230', password: 'Testing12345!' },
+  { username: 'vtobpalm@categories.com', password: 'Testing12345!' },
+  { username: 'sva.cp@colorlessly.com', password: 'Testing12345!' },
+  { username: 'lyyc.icbi@cheerers.net', password: 'Testing12345!' },
+  { username: 'mucqzpskg@hornbooks.biz', password: 'Testing12345!' },
+  { username: 'vqtlzh18@climatical.com', password: 'Testing12345!' },
+  { username: 'rsunehxvy@reclaimant.net', password: 'Testing12345!' }, 
+  { username: 'nryjc.xtzg@waterlessly.net', password: 'Testing12345!' },
+  { username: 'xsxhtx65@thurifer.com', password: 'Testing12345!' },
+  { username: 'ktqgrbwtbk@duelled.com', password: 'Testing12345!' },
+  { username: 'ukwszr@hendiadys.biz', password: 'Testing12345!' },
+  { username: 'ugtfp_qtyz@gucks.com', password: 'Testing12345!' },
+  { username: 'owbrdow@theurgist.com', password: 'Testing12345!' },
 ];
 
 function parseJwt(token) {
@@ -27,7 +29,7 @@ function parseJwt(token) {
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = Buffer.from(base64, 'base64').toString('utf8');
     return JSON.parse(jsonPayload);
- }
+	}
 
 async function loginUser(username, password) {
   try {
@@ -66,7 +68,7 @@ async function loginUser(username, password) {
 
 // Run login attempts for all test users
 (async () => {
-  console.log("Running login attempts for dentists test users...");
+  console.log("Running login attempts for pratice staff test users...");
   // 30 second timer before tests run
   await new Promise(resolve => setTimeout(resolve, 30000));
   console.log("30 second timer complete. Tests start now");
@@ -74,4 +76,3 @@ async function loginUser(username, password) {
     await loginUser(user.username, user.password);
   }
 })();
- 
