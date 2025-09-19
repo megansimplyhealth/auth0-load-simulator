@@ -1,4 +1,5 @@
 const axios = require('axios');
+require("dotenv").config();
 
 const AUTH0_DOMAIN = process.env.TEST_AUTH0_DOMAIN;
 const CLIENT_ID = process.env.TEST_AUTH0_CLIENT_ID;
